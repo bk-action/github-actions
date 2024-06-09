@@ -26,7 +26,7 @@ jobs:
           echo ${{ steps.get-keyword.outputs.level }}
   slack:
     needs: [get-keyword]
-    if: needs.get-keyword.output.level != 'Undefined'
+    if: needs.get-keyword.outputs.level != 'Undefined'
     runs-on: ubuntu-latest
     environment: ${{ needs.get-keyword.outputs.level }}
     steps:
